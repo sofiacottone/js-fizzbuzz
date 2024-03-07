@@ -11,25 +11,34 @@ for (let i = 1; i <= 100; i++) {
     // se multiplo di 5 stampiamo 'Buzz' al posto del numero
     // se multiplo sia di 3 che di 5 stampiamo 'FizzBuzz' al posto del numero
     let userMessage;
+    let userMessageClass;
     if (i % 3 === 0 && i % 5 === 0) {
         userMessage = 'FizzBuzz';
+        userMessageClass = 'bg-danger';
         console.log(userMessage);
     } else if (i % 5 === 0) {
         userMessage = 'Buzz';
+        userMessageClass = 'bg-warning';
         console.log(userMessage);
     } else if (i % 3 === 0) {
         userMessage = 'Fizz';
+        userMessageClass = 'bg-primary';
         console.log(userMessage);
     } else {
         userMessage = i;
+        userMessageClass = 'bg-black';
         console.log(userMessage);
     }
 
     // per ogni numero da 1 a 100 creo un div nell'html
     const numberContainer = document.querySelector('#numbers-container');
-    const newBox = `<div class="box border">${userMessage}</div>`;
-    //      console.log(newBox);
+    const newBox = `<div class="box ${userMessageClass}">${userMessage}</div>`;
     numberContainer.innerHTML += newBox;
 
+
+    // FizzBuzz = rosso = bg-danger
+    // Buzz = giallo = bg-warning
+    // Fizz = blu = bg-primary
+    // i = grigio = bg-black
 
 }
