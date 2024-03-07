@@ -21,9 +21,15 @@ for (let i = 1; i <= 100; i++) {
         userMessage = 'Fizz';
         console.log(userMessage);
     } else {
-        console.log(i);
+        userMessage = i;
+        console.log(userMessage);
     }
 
+    // per ogni numero da 1 a 100 creo un div nell'html
+    const numberContainer = document.querySelector('#numbers-container');
+    const newBox = `<div class="box border">${userMessage}</div>`;
+    //      console.log(newBox);
+    numberContainer.innerHTML += newBox;
 
 
 }
